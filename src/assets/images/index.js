@@ -8,6 +8,9 @@ import feature4 from "./4th-feature.png";
 import logo from "./logo.png";
 import butterfly from "./butterfly.png";
 import about from "./about.png";
+import community from './community.png'
+import btn1 from "./btn-1.png";
+import btn2 from "./btn-2.png";
 
 export {
   test1,
@@ -20,4 +23,7 @@ export {
   logo,
   butterfly,
   about,
+  community,
+  btn1,
+  btn2
 };
