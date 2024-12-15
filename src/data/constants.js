@@ -72,6 +72,47 @@ export const testimonials = [
       '"I\'ve always struggled to find reliable information on sustainable textiles. GreenTex not only simplifies the search but also inspires conscious choices. Highly recommended!"',
     ratings: 5,
   },
-  
+  {
+    profile: test1,
+    name: "Priya Sharma, Designer",
+    opinion:
+      '"GreenTex is a game-changer for sustainable living. It helped me discover eco-friendly fabrics that perfectly matched my needs. The platform is simple and incredibly insightful!"',
+    ratings: 5,
+  },
+  {
+    profile: test2,
+    name: "Amit Kumar, Environmentalist",
+    opinion:
+      '"As someone who advocates for sustainable practices, GreenTex is exactly what we need. Its focus on education and transparency makes it a powerful tool for change."',
+    ratings: 5,
+  },
+  {
+    profile: test3,
+    name: "Neha Mehta, Entrepreneur",
+    opinion:
+      '"I\'ve always struggled to find reliable information on sustainable textiles. GreenTex not only simplifies the search but also inspires conscious choices. Highly recommended!"',
+    ratings: 5,
+  },
+  {
+    profile: test1,
+    name: "Priya Sharma, Designer",
+    opinion:
+      '"GreenTex is a game-changer for sustainable living. It helped me discover eco-friendly fabrics that perfectly matched my needs. The platform is simple and incredibly insightful!"',
+    ratings: 5,
+  },
+  {
+    profile: test2,
+    name: "Amit Kumar, Environmentalist",
+    opinion:
+      '"As someone who advocates for sustainable practices, GreenTex is exactly what we need. Its focus on education and transparency makes it a powerful tool for change."',
+    ratings: 5,
+  },
+  {
+    profile: test3,
+    name: "Neha Mehta, Entrepreneur",
+    opinion:
+      '"I\'ve always struggled to find reliable information on sustainable textiles. GreenTex not only simplifies the search but also inspires conscious choices. Highly recommended!"',
+    ratings: 5,
+  },
   //add more 6 later after you learn carousel
 ];
