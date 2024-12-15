@@ -4,7 +4,7 @@ import butterfly from "../assets/images/butterfly.png";
 
 const Navbar = () => {
   return (
-    <nav className="fixed top-0 flex flex-row w-full h-20 justify-between items-center bg-white font-lato z-10">
+    <nav className="fixed top-0 flex flex-row w-full h-30 justify-between items-center bg-white font-lato z-10">
       <img src={logo} width={200} height={50} alt="logo" className="pt-4" />
       <div className="flex flex-row pt-4 justify-center items-center ">
         <a href="#home" className="mr-8">

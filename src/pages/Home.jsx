@@ -10,6 +10,7 @@ import {
 } from "../sections";
 
 const Home = () => {
+  // add snap scroll
   return (
     <>
       <Navbar />
