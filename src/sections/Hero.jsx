@@ -3,7 +3,7 @@ import Button from "../components/Button";
 
 const Hero = () => {
   return (
-    <section id="home" className="mt-16 min-w-full">
+    <section id="home" className="mt-16 ">
       <main className="min-h-screen pt-10 flex flex-row">
         <div className="pt-16 px-16">
           <h1 className="font-montserrat font-bold text-5xl  ">

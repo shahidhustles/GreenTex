@@ -17,7 +17,7 @@ const Navbar = () => {
         <a href="#features" className="mr-8">
           Features
         </a>
-        <a href="/about" className="mr-8">
+        <a href="#about" className="mr-8">
           About Us
         </a>
       </div>
