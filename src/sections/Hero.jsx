@@ -27,6 +27,9 @@ const Hero = () => {
             <Button>Find Now</Button>
           </div>
         </div>
+        <div className="border-2 border-grey rounded-2xl w-1/3 m-16 flex flex-col justify-center items-center ">
+           <p>PHOTOS TO BE ADDED. (IF YOU GUYS HAVE ANY ANOTHER IDEA DM ME.)</p>
+        </div>
       </main>
     </section>
   );
