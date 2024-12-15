@@ -1,9 +1,11 @@
+import { bigLeaf2 } from "../assets/vectors";
 import StatsCard from "../components/StatsCard";
 import { stats } from "../data/constants";
 
 const Stats = () => {
   return (
-    <div>
+    <div className="relative">
+      <img src={bigLeaf2} alt="" className="absolute top-16"/>
       <h2 className="font-montserrat font-bold text-4xl text-center pb-12">
         Driving Change, One Textile at a Time
       </h2>

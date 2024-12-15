@@ -1,4 +1,5 @@
 import { about, logo } from "../assets/images";
+import {  recycleCircle } from "../assets/vectors";
 
 const AboutUs = () => {
   return (
@@ -6,6 +7,8 @@ const AboutUs = () => {
       id="about"
       className=" min-h-screen relative flex flex-col justify-center items-center"
     >
+      <img src={recycleCircle} alt="" className=" absolute right-0 -top-14"/>
+      
       <div className="w-full ">
         <img
           src={about}

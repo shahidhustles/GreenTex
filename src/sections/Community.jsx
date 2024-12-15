@@ -1,9 +1,11 @@
 import { btn1, btn2, community } from "../assets/images";
+import { leaves } from "../assets/vectors";
 import Button from "../components/Button";
 
 const Community = () => {
   return (
     <section id="community" className="min-h-[550px] bg-grey flex-1  relative">
+      <img src={leaves} alt="" className="absolute left-0 -top-10"  />
       <div className="w-2/3 bg-white h-2/3 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-3xl flex flex-row justify-evenly items-center ">
         <div>
           <img
