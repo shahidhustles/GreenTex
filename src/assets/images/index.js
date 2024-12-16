@@ -11,6 +11,7 @@ import about from "./about.png";
 import community from './community.png'
 import btn1 from "./btn-1.png";
 import btn2 from "./btn-2.png";
+import login from "./login.png";
 
 export {
   test1,
@@ -25,5 +26,6 @@ export {
   about,
   community,
   btn1,
-  btn2
+  btn2,
+  login
 };

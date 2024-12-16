@@ -12,6 +12,7 @@ export default {
         primary: '#55B76B',
         accent: '#8BD2A0',
         grey: '#333333',
+        'slate-grey': '#F7FBFF',
       },
       fontFamily: {
         lato: ['Lato', 'sans-serif'],
@@ -21,3 +22,4 @@ export default {
   },
   plugins: [],
 }
+
