@@ -11,6 +11,7 @@ import {
 
 const Home = () => {
   // add snap scroll
+  //pagination
   return (
     <>
       <Navbar />

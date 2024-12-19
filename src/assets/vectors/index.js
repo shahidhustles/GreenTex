@@ -8,6 +8,8 @@ import bigGlobe from "./big-globe.png";
 import leaves from "./leaves.png";
 import recycleCircle from "./recycle-circle.png";
 import smallGlobe from "./globe-small.png";
+import needs from "./needs.png";
+
 
 export {
   pin,
@@ -20,4 +22,5 @@ export {
   bigGlobe,
   leaves,
   recycleCircle,
+  needs
 };

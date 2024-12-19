@@ -13,3 +13,16 @@ export const useData = create(
     }
   )
 )
+
+export const useTextiles = create((set, get) => ({
+  textiles: [],
+  setTextiles: (textiles) => set({ textiles }),
+  // below func returns the textile arrays
+  getTextiles: () => get().textiles,
+  updateTextiles: (newTextiles) => {
+    const currentTextiles = get().textiles;
+    if (currentTextiles.length === 0 || currentTextiles.length < newTextiles.length) {
+      set({ textiles: newTextiles });
+    }
+  }
+}))
