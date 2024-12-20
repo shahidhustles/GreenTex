@@ -24,12 +24,18 @@ export const allProperties = () => {
 export const filterCards = () => {
   const selectedProperties = useTextiles.getState().selectedProperties;
   const textiles = useTextiles.getState().getTextiles();
-  
+
   if (!selectedProperties.length) return textiles;
-  
+
   return textiles.filter((textile) =>
-    selectedProperties.every((prop) =>
-      textile.properties.includes(prop)
-    )
+    selectedProperties.every((prop) => textile.properties.includes(prop))
   );
+};
+
+export const searchFilter = (search) => {
+  const textiles = useTextiles.getState().getTextiles();
+  const searchedTextiles = textiles.filter((textile) => {
+    return textile.name.toLowerCase().includes(search.trim().toLowerCase());
+  });
+  return searchedTextiles;
 };
