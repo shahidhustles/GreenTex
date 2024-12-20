@@ -9,10 +9,11 @@ import leaves from "./leaves.png";
 import recycleCircle from "./recycle-circle.png";
 import smallGlobe from "./globe-small.png";
 import needs from "./needs.png";
-
+import sorry from "./sorry.jpeg";
 
 export {
   pin,
+  sorry,
   smiley,
   smallGlobe,
   leaf,

@@ -6,10 +6,11 @@ import { useState, useEffect } from "react";
 import { useData } from "../store/store";
 import { signOut } from "firebase/auth";
 import { auth } from "../config/firebase";
+import { BsBookmarkStar } from "react-icons/bs";
 
 const Navbar = () => {
   //for handling active class
-  const [activeHash, setActiveHash] = useState(window.location.hash || "#home");
+  const [activeHash, setActiveHash] = useState(window.location.hash );
   const navigate = useNavigate();
   // as addEventListener is a side effect.
   useEffect(() => {
@@ -78,7 +79,11 @@ const Navbar = () => {
           </Button>
         </div>
       ) : (
-        <div className="pt-4 mr-4">
+        <div className="pt-4 mr-4 flex flex-row items-center justify-center relative">
+          <NavLink to="/bookmarks" className="mr-16">
+            <BsBookmarkStar  size={24} />
+          </NavLink>
+          <span className="absolute left-4 bottom-6 rounded-full text-white bg-red-500 w-4 h-4 text-xs flex items-center justify-center"><p>1</p></span>
           <Button onClick={handleLogout}>Logout</Button>
         </div>
       )}

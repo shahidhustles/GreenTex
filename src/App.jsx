@@ -3,6 +3,7 @@ import Home from "./pages/Home";
 import Login, { action as LoginUserAction } from "./pages/Login";
 import SignUp, { action as createUserAction } from "./pages/SignUp";
 import Find, { loader as textileLoader } from "./pages/Find";
+import Bookmarks from "./pages/Bookmarks";
 
 const router = createBrowserRouter([
   {
@@ -23,6 +24,11 @@ const router = createBrowserRouter([
     path: "/find",
     element: <Find />,
     loader: textileLoader,
+  },
+  {
+    path: "/bookmarks",
+    element: <Bookmarks />,
+  
   },
 ]);
 
