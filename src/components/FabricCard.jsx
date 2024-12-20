@@ -18,7 +18,12 @@ const FabricCard = ({ textile }) => {
     }
   }
   return (
-    <div className=" relative min-w-50 max-w-80  p-2 cursor-pointer font-sans bg-white rounded-xl transform transition-all hover:-translate-y-2 duration-300 shadow-lg hover:shadow-2xl">
+    <div
+      onClick={() => {
+        navigate(`${textile.id}`);
+      }}
+      className=" relative min-w-50 max-w-80  p-2 cursor-pointer font-sans bg-white rounded-xl transform transition-all hover:-translate-y-2 duration-300 shadow-lg hover:shadow-2xl"
+    >
       <img
         className="h-40 w-full object-cover rounded-xl"
         src={textile.imageUrl || "https://placehold.co/320x160"}

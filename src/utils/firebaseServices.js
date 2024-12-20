@@ -1,4 +1,4 @@
-import { addDoc, collection, getDocs } from "firebase/firestore";
+import { addDoc, collection, doc, getDoc, getDocs } from "firebase/firestore";
 import { db } from "../config/firebase";
 import { textiles } from "../data/textiles";
 
@@ -29,3 +29,20 @@ export async function fetchTextiles() {
     console.error("Error fetching documents: ", error);
   }
 }
+
+export const fetchTextileById = async (textileId) => {
+  const docRef = doc(db, "textiles", textileId);
+  try {
+    const docSnap = await getDoc(docRef);
+    if (docSnap.exists()) {
+      return {
+        ...docSnap.data(),
+        id: docSnap.id
+      };
+    }
+    return null;
+  } catch (error) {
+    console.log(error);
+    return null;
+  }
+};

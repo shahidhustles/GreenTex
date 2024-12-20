@@ -2,8 +2,11 @@ import { createBrowserRouter, RouterProvider } from "react-router";
 import Home from "./pages/Home";
 import Login, { action as LoginUserAction } from "./pages/Login";
 import SignUp, { action as createUserAction } from "./pages/SignUp";
-import Find, { loader as textileLoader } from "./pages/Find";
+import Find, { loader as textilesLoader } from "./pages/Find";
 import Bookmarks from "./pages/Bookmarks";
+import TextileDetails, {
+  loader as textileLoader,
+} from "./pages/TextileDetails";
 
 const router = createBrowserRouter([
   {
@@ -23,12 +26,16 @@ const router = createBrowserRouter([
   {
     path: "/find",
     element: <Find />,
+    loader: textilesLoader,
+  },
+  {
+    path: "/find/:textileId",
+    element: <TextileDetails />,
     loader: textileLoader,
   },
   {
     path: "/bookmarks",
     element: <Bookmarks />,
-  
   },
 ]);
 
