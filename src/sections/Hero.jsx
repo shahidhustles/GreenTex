@@ -4,7 +4,7 @@ import Button from "../components/Button";
 
 const Hero = () => {
   return (
-    <section id="home" className="mt-16 relative">
+    <section id="home" className=" relative">
       <img src={leaf} alt=""  className="absolute left-1/4 top-[235px] opacity-75"/>
       <img src={bulbLeaf} alt="" className="absolute bottom-0" />
       <main className="min-h-screen pt-10 flex flex-row">

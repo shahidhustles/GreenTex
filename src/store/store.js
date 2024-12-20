@@ -18,6 +18,7 @@ export const useTextiles = create((set, get) => ({
   textiles: [],
   setTextiles: (textiles) => set({ textiles }),
   selectedProperties: [],
+  bookmarkedTextiles: [],
   // below func returns the textile arrays
   getTextiles: () => get().textiles,
   updateTextiles: (newTextiles) => {
@@ -32,7 +33,13 @@ export const useTextiles = create((set, get) => ({
   toggleSelectedProperty: (property) =>
     set((state) => ({
       selectedProperties: state.selectedProperties.includes(property)
-        ? state.selectedProperties.filter(prop => prop !== property)
-        : [...state.selectedProperties, property]
+        ? state.selectedProperties.filter((prop) => prop !== property)
+        : [...state.selectedProperties, property],
+    })),
+  toggleBookmark: (textile) =>
+    set((state) => ({
+      bookmarkedTextiles: state.bookmarkedTextiles.includes(textile)
+        ? state.bookmarkedTextiles.filter((prop) => prop !== textile)
+        : [...state.bookmarkedTextiles, textile],
     })),
 }));

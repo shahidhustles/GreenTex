@@ -2,7 +2,9 @@ import { useTextiles } from "../store/store";
 
 const FilterTiles = ({ children }) => {
   const selectedProperties = useTextiles((state) => state.selectedProperties);
-  const toggleSelectedProperty = useTextiles((state) => state.toggleSelectedProperty);
+  const toggleSelectedProperty = useTextiles(
+    (state) => state.toggleSelectedProperty
+  );
   const isSelected = selectedProperties.includes(children);
 
   return (
