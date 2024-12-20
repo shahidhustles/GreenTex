@@ -41,7 +41,7 @@ const Navbar = () => {
       <img src={logo} width={200} height={50} alt="logo" className="pt-4" />
       <div className="flex flex-row pt-4 justify-center items-center ">
         <a
-          href="#home"
+          href="/#home"
           className={`mr-8 ${activeHash === "#home" ? "text-accent" : ""}`}
         >
           Home
@@ -60,13 +60,13 @@ const Navbar = () => {
           className="mr-2"
         />
         <a
-          href="#features"
+          href="/#features"
           className={`mr-8 ${activeHash === "#features" ? "text-accent" : ""}`}
         >
           Features
         </a>
         <a
-          href="#about"
+          href="/#about"
           className={`mr-8 ${activeHash === "#about" ? "text-accent" : ""}`}
         >
           About Us

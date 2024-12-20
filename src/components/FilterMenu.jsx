@@ -1,5 +1,5 @@
 import { allProperties } from "../utils/filterUtils";
-import FilterTiles from "./filterTiles";
+import FilterTiles from "./FilterTiles";
 
 const FilterMenu = () => {
   const properties = allProperties();
