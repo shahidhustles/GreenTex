@@ -1,4 +1,4 @@
-import { createBrowserRouter, RouterProvider } from "react-router";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./pages/Home";
 import Login, { action as LoginUserAction } from "./pages/Login";
 import SignUp, { action as createUserAction } from "./pages/SignUp";
@@ -7,6 +7,7 @@ import Bookmarks from "./pages/Bookmarks";
 import TextileDetails, {
   loader as textileLoader,
 } from "./pages/TextileDetails";
+import Chatbot from "./components/Chatbot";
 
 const router = createBrowserRouter([
   {
@@ -40,5 +41,10 @@ const router = createBrowserRouter([
 ]);
 
 export default function App() {
-  return <RouterProvider router={router}></RouterProvider>;
+  return (
+    <>
+      <RouterProvider router={router} />
+      <Chatbot />
+    </>
+  );
 }

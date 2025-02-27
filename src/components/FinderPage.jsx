@@ -5,6 +5,7 @@ import { searchFilter } from "../utils/filterUtils";
 import { ImCross } from "react-icons/im";
 import { Form } from "react-router";
 
+
 const FinderPage = ({ textiles }) => {
   const [mapTextiles, setMapTextiles] = useState(textiles);
   const [search, setSearch] = useState("");
@@ -30,8 +31,11 @@ const FinderPage = ({ textiles }) => {
     setMapTextiles(textiles);
   }
   return (
-    <div className="flex flex-col items-center justify-start w-full">
-      <Form onSubmit={(e) => e.preventDefault()} className="mt-16 w-[500px] h-[40px] focus-within:shadow-lg focus-within:border-green-600 rounded-full border-2 border-grey flex flex-row justify-between px-8 items-center transition-all duration-200">
+    <div className="flex flex-col items-center justify-start w-full relative">
+      <Form
+        onSubmit={(e) => e.preventDefault()}
+        className="mt-16 w-[500px] h-[40px] focus-within:shadow-lg focus-within:border-green-600 rounded-full border-2 border-grey flex flex-row justify-between px-8 items-center transition-all duration-200"
+      >
         <input
           className="focus:outline-none w-full font-montserrat text-lg"
           type="text"

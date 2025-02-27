@@ -7,7 +7,7 @@ const Features = () => {
     <section id="features" className="min-h-screen w-full relative">
       <img src={bigLeaf1} alt="" className="absolute right-0 bottom-0" />
   
-      <h2 className="font-montserrat font-bold text-4xl text-center pb-16">How does GreenTex works?</h2>
+      <h2 className="font-montserrat font-bold text-4xl text-center pb-16">How does GreenTex work?</h2>
       <div className="flex flex-row justify-between items-center w-full px-16">
         
         {features.map((feature) => (

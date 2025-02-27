@@ -40,7 +40,13 @@ const Navbar = () => {
   const bookmarkedTextiles = useTextiles((state) => state.bookmarkedTextiles);
   return (
     <nav className="fixed top-0 flex flex-row w-full h-30 justify-between items-center bg-white font-lato z-50">
-      <img src={logo} width={200} height={50} alt="logo" className="pt-4" />
+      <button
+        onClick={() => {
+          navigate("/");
+        }}
+      >
+        <img src={logo} width={200} height={50} alt="logo" className="pt-4" />
+      </button>
       <div className="flex flex-row pt-4 justify-center items-center ">
         <a
           href="/#home"

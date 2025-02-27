@@ -46,3 +46,10 @@ export const fetchTextileById = async (textileId) => {
     return null;
   }
 };
+
+//bookmark logic:
+// normally we used to add a collection manually in firebase, but now we will be using setDoc for the same
+// the only difference is then we had the written, now the data is depended on user.
+// each document will be named after users uid (making it easier to fetch) and we will be using array union / remove to 
+// which automatically looks after duplicates adn makes sure its unique. And {merge: true} makes sure the array is 
+// immutable and we are not replacing the whole array.
