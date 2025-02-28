@@ -1,5 +1,5 @@
 import { FcGoogle } from "react-icons/fc";
-
+import { FaArrowLeft } from "react-icons/fa"; // Added import for back arrow icon
 import { login } from "../assets/images";
 import { Form, Link, redirect, useActionData, useNavigate } from "react-router";
 import { signInWithEmailAndPassword, signInWithPopup } from "firebase/auth";
@@ -16,6 +16,7 @@ const Login = () => {
       useData.setState((state) => ({
         ...state,
         isLoggedIn: true,
+        user: auth.currentUser,
       }));
       navigate("/");
     } catch (e) {
@@ -24,10 +25,24 @@ const Login = () => {
       };
     }
   }
+
+  // Function to handle back button click
+  const handleBack = () => {
+    navigate(-1);
+  };
+
   return (
     <div className="flex flex-col md:flex-row min-h-screen w-full justify-center items-center p-4">
       <div className="w-full md:w-1/2 max-w-xl">
         <div>
+          {/* Back button */}
+          <button
+            onClick={handleBack}
+            className="flex items-center gap-2 mb-4 text-gray-600 hover:text-gray-900 transition-colors"
+          >
+            <FaArrowLeft /> Back
+          </button>
+
           <h1 className="font-montserrat font-semibold text-3xl md:text-4xl">
             Welcome Back !!
           </h1>
@@ -89,7 +104,6 @@ const Login = () => {
               <FcGoogle className="text-xl" />
               Sign In with Google
             </button>
-            
           </div>
           <p className="font-lato mt-6 text-center ">
             Don&apos;t have an Account?{" "}
@@ -145,11 +159,12 @@ export async function action({ request }) {
     useData.setState((state) => ({
       ...state,
       isLoggedIn: true,
+      user: auth.currentUser,
     }));
     return redirect("/");
   } catch (e) {
     return {
-      auth: "Invalid email or password"
+      auth: "Invalid email or password",
     };
   }
 }

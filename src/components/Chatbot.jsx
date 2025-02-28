@@ -28,7 +28,7 @@ const Chatbot = () => {
     } catch (e) {
       setChatHistory((prev) => [
         ...prev,
-        { type: "bot", content: "Sorry, I couldn't process your request.",e },
+        { type: "bot", content: "Sorry, I couldn't process your request.", e },
       ]);
     } finally {
       setIsLoading(false);
@@ -36,7 +36,9 @@ const Chatbot = () => {
   };
 
   return (
-    <>
+    <div className="z-[9999]">
+      {" "}
+      {/* Added z-index to ensure chatbot is always on top */}
       {/* Chatbot Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
@@ -44,7 +46,6 @@ const Chatbot = () => {
       >
         {isOpen ? <IoClose size={24} /> : <IoMdChatboxes size={24} />}
       </button>
-
       {/* Chat Window */}
       {isOpen && (
         <div className="fixed bottom-24 right-6 w-80 h-[500px] bg-white rounded-lg shadow-xl flex flex-col border">
@@ -102,7 +103,7 @@ const Chatbot = () => {
           </form>
         </div>
       )}
-    </>
+    </div>
   );
 };
 

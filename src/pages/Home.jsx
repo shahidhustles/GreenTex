@@ -1,5 +1,3 @@
-import Footer from "../components/Footer";
-import Navbar from "../components/Navbar";
 import {
   AboutUs,
   Community,
@@ -10,19 +8,15 @@ import {
 } from "../sections";
 
 const Home = () => {
-  // add snap scroll
-  //pagination
   return (
-    <>
-      <Navbar />
+    <div className="overflow-x-hidden">
       <Hero />
       <Features />
       <Stats />
       <Testimonials />
       <AboutUs />
       <Community />
-      <Footer />
-    </>
+    </div>
   );
 };
 

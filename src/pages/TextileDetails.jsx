@@ -11,7 +11,7 @@ const TextileDetails = () => {
         {/* Header Section */}
         <div className="relative h-64 w-full">
           <img
-            src={data.image || "https://placeholder.com/800x400?text=Textile+Image"}
+            src={data.images.textile || "https://placeholder.com/800x400?text=Textile+Image"}
             alt={data.name}
             className="w-full h-full object-cover"
           />
@@ -30,10 +30,10 @@ const TextileDetails = () => {
           <div>
             <h2 className="text-xl font-semibold mb-4">Brands Using This Material</h2>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              {data.brandsPlaces.map((brand) => (
+              {data.brandsPlaces.map((brand, index) => (
                 <div key={brand} className="flex flex-col items-center p-4 border rounded-lg">
                   <img
-                    src={`https://placeholder.com/100x50?text=${brand}`}
+                    src={`${data.images.brands[index]}`}
                     alt={brand}
                     className="h-12 object-contain mb-2"
                   />
@@ -71,10 +71,10 @@ const TextileDetails = () => {
           <div>
             <h2 className="text-xl font-semibold mb-4">Products Made From This Material</h2>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
-              {data.usedToMake.map((product) => (
+              {data.usedToMake.map((product,index) => (
                 <div key={product} className="flex flex-col items-center">
                   <img
-                    src={`https://placeholder.com/200x200?text=${product}`}
+                    src={`${data.images.products[index]}`}
                     alt={product}
                     className="w-full h-48 object-cover rounded-lg mb-2"
                   />

@@ -8,11 +8,32 @@ import TextileDetails, {
   loader as textileLoader,
 } from "./pages/TextileDetails";
 import Chatbot from "./components/Chatbot";
+import Layout from "./components/Layout";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Home />,
+    element: <Layout />,
+    children: [
+      {
+        index: true,
+        element: <Home />,
+      },
+      {
+        path: "find",
+        element: <Find />,
+        loader: textilesLoader,
+      },
+      {
+        path: "find/:textileId",
+        element: <TextileDetails />,
+        loader: textileLoader,
+      },
+      {
+        path: "bookmarks",
+        element: <Bookmarks />,
+      },
+    ],
   },
   {
     path: "/login",
@@ -23,20 +44,6 @@ const router = createBrowserRouter([
     path: "/signup",
     element: <SignUp />,
     action: createUserAction,
-  },
-  {
-    path: "/find",
-    element: <Find />,
-    loader: textilesLoader,
-  },
-  {
-    path: "/find/:textileId",
-    element: <TextileDetails />,
-    loader: textileLoader,
-  },
-  {
-    path: "/bookmarks",
-    element: <Bookmarks />,
   },
 ]);
 

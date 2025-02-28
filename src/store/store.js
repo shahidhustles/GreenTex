@@ -5,13 +5,15 @@ export const useData = create(
   persist(
     (set) => ({
       isLoggedIn: false,
+      user: null,
       setIsLoggedIn: (isLoggedIn) => set({ isLoggedIn }),
+      setUser: (user) => set({ user }),
     }),
     {
       name: "user-data", // name of the item in the storage (must be unique)
       getStorage: () => localStorage, // (optional) by default, 'localStorage' is used
     }
-  )
+  ) // (optional) by default, 'localStorage' is used
 );
 
 export const useTextiles = create((set, get) => ({
@@ -19,6 +21,8 @@ export const useTextiles = create((set, get) => ({
   setTextiles: (textiles) => set({ textiles }),
   selectedProperties: [],
   bookmarkedTextiles: [],
+  setBookmarkedTextiles: (bookmarks) => set({ bookmarkedTextiles: bookmarks }),
+
   // below func returns the textile arrays
   getTextiles: () => get().textiles,
   updateTextiles: (newTextiles) => {
@@ -38,8 +42,10 @@ export const useTextiles = create((set, get) => ({
     })),
   toggleBookmark: (textile) =>
     set((state) => ({
-      bookmarkedTextiles: state.bookmarkedTextiles.includes(textile)
-        ? state.bookmarkedTextiles.filter((prop) => prop !== textile)
+      bookmarkedTextiles: state.bookmarkedTextiles.some(
+        (item) => item.id === textile.id
+      )
+        ? state.bookmarkedTextiles.filter((item) => item.id !== textile.id)
         : [...state.bookmarkedTextiles, textile],
     })),
 }));
