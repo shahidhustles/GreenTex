@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { callChatbotWithQuestion } from "../utils/callChatbotWithQuestion";
 import { IoMdChatboxes } from "react-icons/io";
 import { IoClose } from "react-icons/io5";
@@ -8,9 +8,36 @@ const Chatbot = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [message, setMessage] = useState("");
   const [chatHistory, setChatHistory] = useState([
-    { type: "bot", content: "How can I help you?" },
+    {
+      type: "bot",
+      content:
+        "Greetings of the Day!!, My name is Texa. How can I help you Today ?",
+    },
   ]);
   const [isLoading, setIsLoading] = useState(false);
+  const [showTooltip, setShowTooltip] = useState(false);
+
+  // Toggle tooltip visibility periodically
+  useEffect(() => {
+    if (!isOpen) {
+      // Show tooltip after a delay when chat is closed
+      const initialDelay = setTimeout(() => {
+        setShowTooltip(true);
+      }, 3000);
+
+      // Create pulse effect by toggling tooltip visibility
+      const tooltipInterval = setInterval(() => {
+        setShowTooltip((prev) => !prev);
+      }, 5000);
+
+      return () => {
+        clearTimeout(initialDelay);
+        clearInterval(tooltipInterval);
+      };
+    } else {
+      setShowTooltip(false);
+    }
+  }, [isOpen]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -37,15 +64,27 @@ const Chatbot = () => {
 
   return (
     <div className="z-[9999]">
-      {" "}
       {/* Added z-index to ensure chatbot is always on top */}
-      {/* Chatbot Button */}
-      <button
-        onClick={() => setIsOpen(!isOpen)}
-        className="fixed bottom-6 right-6 bg-green-600 text-white p-4 rounded-full shadow-lg hover:bg-green-700 transition-all duration-200"
-      >
-        {isOpen ? <IoClose size={24} /> : <IoMdChatboxes size={24} />}
-      </button>
+
+      {/* Chatbot Button with Tooltip */}
+      <div className="fixed bottom-6 right-6 flex items-end">
+        {showTooltip && !isOpen && (
+          <div className="animate-pulse mb-2 mr-4 p-3 bg-green-100 text-green-800 rounded-lg shadow-md max-w-[200px]">
+            <div className="relative">
+              <p className="text-sm font-medium">Need help? Chat with Texa!</p>
+              {/* Arrow pointing to button */}
+              <div className="absolute right-[-12px] bottom-2 w-4 h-4 bg-green-100 transform rotate-45"></div>
+            </div>
+          </div>
+        )}
+        <button
+          onClick={() => setIsOpen(!isOpen)}
+          className="bg-green-600 text-white p-4 rounded-full shadow-lg hover:bg-green-700 transition-all duration-200"
+        >
+          {isOpen ? <IoClose size={24} /> : <IoMdChatboxes size={24} />}
+        </button>
+      </div>
+
       {/* Chat Window */}
       {isOpen && (
         <div className="fixed bottom-24 right-6 w-80 h-[500px] bg-white rounded-lg shadow-xl flex flex-col border">
